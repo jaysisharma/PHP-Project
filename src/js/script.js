@@ -11,7 +11,6 @@ gsap.from(".logo",{
     
 })
 gsap.registerPlugin(ScrollTrigger);
-
 // ScrollTrigger.create({
 //     trigger: ".about",
 //     start: "top center", 

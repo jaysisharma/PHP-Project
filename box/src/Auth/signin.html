@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"
+        integrity="sha512-1PKqXBz2ju2JcAerHKL0ldg0PT/1vr3LghYAtc59+9xy8e19QEtaNUyt1gprouyWnpOPqNJjL4gXMRMEpHYyLQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" />
+    <title>Login</title>
+    <style>
+        .left {
+            height: 84vh;
+        }
+
+        #cancel {
+            display: none;
+        }
+
+        #hamburger {
+            display: none;
+        }
+
+        .inbtn {
+            display: none;
+        }
+
+        @media (max-width:1100px) {
+
+            /* .left{
+                height: 100vh;
+            } */
+            .input1 {
+                width: calc(100%-20%);
+            }
+        }
+
+        @media (max-width:768px) {
+            #cancel {
+                display: block;
+            }
+
+            #hamburger {
+                display: block;
+            }
+
+            .inbtn {
+                display: block;
+            }
+
+            .navbar ul {
+                display: none;
+                background-color: #000;
+                height: 132vh;
+                width: 100vw;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+
+            .navbar ul li {
+                margin-top: 40px;
+                padding-left: 30px;
+            }
+
+            .left {
+                height: 114vh;
+            }
+        }
+
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+
+<body style="background-color: #111827; " id="body">
+    <div class="navbar h-16 text-white flex items-center md:px-20 px-4 pt-4 justify-between">
+        <div class="logo md:text-4xl text-2xl">Logo</div>
+        <ul class="flex gap-6 text-xl ">
+            <li class="md:hidden block text-4xl">Logo</li>
+            <li class="magnet">Home</li>
+            <li class="magnet"> Technology</li>
+            <li class="magnet">Fashion</li>
+            <li class="magnet">Gadgets</li>
+            <div class="inbtn flex flex-col w-20 ">
+                <li>Register</li>
+                <li>Login</li>
+            </div>
+            <i class="fa-solid fa-xmark md:hidden absolute right-10 top-10" id="cancel"></i>
+
+        </ul>
+        <div class="btns flex">
+            <button class="btn magnet bg-white text-black p-2 px-4 rounded-lg md:block hidden">SignUp</button>
+            <button class="btn magnet bg-white text-black p-2 px-4 rounded-lg md:block hidden ml-2">Login</button>
+            <i class="fa-solid fa-bars md:hidden block  float-right mt-1 mr-4" id="hamburger"></i>
+
+        </div>
+
+    </div>
+    <hr class="mt-4">
+    <section id="signup">
+        <div class="container flex justify-between mx-auto py-20 h-screen">
+            <div class="left w-full lg:w-1/2 bg-gray-800  rounded-lg p-7 md:pt-1 pt-5 text-white">
+                <div class="logo text-4xl">Blogssy</div>
+                <p class="text-3xl font-semibold mt-0">Create your Account</p>
+                <p class="text-gray-400 mt-1">Read loveable blogs. Already have an account? <span
+                        class="text-blue-500">Login here</span></p>
+                <div class="form mt-7">
+                    <form action="">
+                        <div class="lg:grid md:grid sm:flex flex-col grid-cols-2 gap-8">
+                            <div class="in">
+                                <span class="font-medium mb-2">Your Email</span><br>
+                                <input
+                                    class="input1 rounded-md   w-full px-3 h-12 py-1 mt-2 bg-gray-600 border border-gray-500"
+                                    placeholder="name@gmail.com" type="text" name="email" id="email">
+                            </div>
+                            <div class="in">
+                                <span class="font-medium mb-2">Full Name</span><br>
+                                <input
+                                    class="input1 rounded-md  w-full px-3 h-12 py-2 mt-2 bg-gray-600 border border-gray-500"
+                                    placeholder="Josh Buttler" type="text" name="full_name">
+                            </div>
+                            <div class="in">
+                                <span class="font-medium mb-2">Password</span><br>
+                                <input
+                                    class="input1 rounded-md  w-full px-3 h-12 py-1 mt-2 bg-gray-600 border border-gray-500"
+                                    placeholder="Password" type="password" name="password" id="password">
+                            </div>
+                            <div class="in">
+                                <span class="font-medium mb-2">Confirm Password</span><br>
+                                <input
+                                    class="input1 rounded-md  w-full px-3 h-12 py-1 mt-2 bg-gray-600 border border-gray-500"
+                                    placeholder="Confirm password" type="password" name="confirmPassword"
+                                    id="confirmPassword">
+                            </div>
+                        </div>
+                        <div class="flex items-center mt-8">
+                            <div class="flex-1 h-0.5 bg-gray-600"></div>
+                            <div class="mx-4 text-gray-300">Or</div>
+                            <div class="flex-1 h-0.5 bg-gray-600"></div>
+                        </div>
+                        <div class="google mt-8">
+                            <button
+                                class="btn p-2 w-full rounded-lg text-gray-300 border border-gray-600 flex justify-center items-center gap-4"><span><img
+                                        src="../User/icons8-google.svg" class="w-8 h-8" alt=""> </span>Sign Up With
+                                Google</button>
+                            <button
+                                class="btn p-2 w-full rounded-lg text-gray-300 border mt-5 border-gray-600 flex justify-center items-center gap-4"><span><img
+                                        src="../User/icons8-facebook.svg" class="w-8 h-8" alt=""> </span>Sign Up With
+                                Facebook</button>
+                        </div>
+                        <div class="terms mt-10 flex gap-4 flex-col">
+                            <div class="term1 flex gap-2">
+                                <div class="chec">
+                                    <input type="checkbox" name="" id="termsCheckbox">
+
+
+                                </div>
+                                <span class="text-gray-400">By signing up, you are creating a Blogssy account, and you
+                                    agree to Blogssy’s Terms of
+                                    Use and Privacy Policy.
+                                </span>
+                            </div>
+                            <div class="term2 flex gap-2">
+                                <div class="chec">
+                                    <input type="checkbox" name="" id="">
+
+
+                                </div>
+                                <span class="text-gray-400">By signing up, you are creating a Blogssy account, and you
+                                    agree to Blogssy’s Terms of
+                                    Use and Privacy Policy.
+                                </span>
+                            </div>
+                        </div>
+                        <input type="submit" value="Create Account"
+                            class="w-full mt-6 cursor-pointer rounded-md text-white bg-blue-500 p-2 mt-10">
+                    </form>
+                </div>
+            </div>
+
+            <div class="right lg:block hidden w-3/5">
+                <img src="../User/Key-rafiki.svg" alt="">
+            </div>
+        </div>
+    </section>
+
+    <script src="../js/script.js"></script>
+    <script>
+        $(document).ready(function () {
+            function isValidEmail(email) {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            }
+
+            function isValidPassword(password) {
+                var regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+])(?=.*[^\w\d\s]).{8,}$/;
+                return regex.test(password);
+            }
+
+            function showError(input, message) {
+                $(input).next(".error-message").remove(); // Remove existing error message
+                $(input).after(`<div class="error-message text-red-500">${message}</div>`);
+            }
+
+            function removeError(input) {
+                // Remove error message next to the input field
+                $(input).next(".error-message").remove();
+            }
+
+            $("form").submit(function (event) {
+                event.preventDefault();
+
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var confirmPassword = $("#confirmPassword").val();
+
+                if (!isValidEmail(email)) {
+                    showError("#email", "Please enter a valid email address");
+                    return;
+                } else {
+                    removeError("#email");
+                }
+
+                if (!isValidPassword(password)) {
+                    showError("#password", "Password must be at least 8 characters long and contain at least one digit, one lowercase letter, one uppercase letter, and one special character");
+                    return;
+                } else {
+                    removeError("#password");
+                }
+
+                if (password !== confirmPassword) {
+                    showError("#confirmPassword", "Passwords do not match");
+                    return;
+                } else {
+                    removeError("#confirmPassword");
+                }
+
+                if (!$("#termsCheckbox").prop("checked")) {
+                    showError("#termsCheckbox", "Please agree to the terms and conditions");
+                    return;
+                } else {
+                    removeError("#termsCheckbox");
+                }
+
+
+                window.location.href = "homePage.html";
+            });
+
+            $('#hamburger').click(function () {
+                $('.navbar ul').slideToggle();
+                $('#body').css("height", "100vh")
+            });
+            $('#cancel').click(function () {
+                $('.navbar ul').slideUp();
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

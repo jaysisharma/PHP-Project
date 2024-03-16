@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar section</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="./jquery-3.7.1.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      width: 100%;
+    }
+
+    /* .navbar{
+            height: 100px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: crimson;
+        }
+        .navbar .logo{
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-right: 10vh;
+        }
+        .navbar nav ul{
+            width: 50%;
+            margin-right: 30vh;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .navbar nav ul .login{
+            display: none;
+        }
+        .navbar nav ul .register{
+            display: none;
+        }
+        .navbar nav ul #cancel{
+            display: none;
+        }
+        .navbar nav ul li{
+            font-size: 18px;
+            list-style: none;
+            padding: 20px;
+            cursor: pointer;
+        }
+        .navbar nav ul li:hover{
+            color: white;
+        }
+        .navbar .btn button{
+            height: 40px;
+            width: 100px;
+            background-color: green;
+            font-size: 15px;
+            font-weight: bold;
+            border: transparent;
+            border-radius: 10px;
+            cursor: pointer;
+        } */
+    #hamburger {
+      display: none;
+    }
+
+    /* @media(max-width: 768px) {
+      .navbar {
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: crimson;
+      }
+
+      .navbar .logo {
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+        margin-right: 10vh;
+      }
+
+      .navbar nav ul {
+        width: 50%;
+        margin-right: 30vh;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        display: none;
+        position: absolute;
+      }
+
+      .navbar nav ul .login {
+        display: none;
+      }
+
+      .navbar nav ul .register {
+        display: none;
+      }
+
+      .navbar nav ul #cancel {
+        display: none;
+      }
+
+      .navbar nav ul li {
+        font-size: 18px;
+        list-style: none;
+        padding: 20px;
+        cursor: pointer;
+      }
+
+      .navbar nav ul li:hover {
+        color: white;
+      }
+
+      .navbar .btn button {
+        height: 40px;
+        width: 100px;
+        background-color: green;
+        font-size: 15px;
+        font-weight: bold;
+        border: transparent;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      #hamburger {
+        display: block;
+      }
+    } */
+    @media (max-width:768px) {
+      .navbar nav ul{
+        display: none;
+        padding-top: 180px;
+        
+      }
+      .navbar nav ul li{
+        margin-top: 40px;
+      }
+
+      #hamburger{
+        display: block;
+      }
+      #cancel{
+        position: absolute;
+        top: 35px;
+        right: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar flex bg-red-500 h-16 justify-between  items-center px-8">
+    <div class="logo">Logo</div>
+    <nav>
+      <ul class="flex md:gap-4 gap-20 md:flex-row flex-col absolute  left-0 top-0 w-screen text-center text-3xl px-10 bg-black text-white h-screen">
+        <i class="fa-solid fa-xmark md:hidden " id="cancel"></i>
+        <li>Home</li>
+        <li>About</li>
+        <li>Services</li>
+        <li>Contact</li>
+      </ul>
+      <input type="text" name="" id="" class="mr-2 rounded-md px-4 w-40" placeholder="Search......">
+      <i class="fa-solid fa-bars md:hidden block  float-right mt-1" id="hamburger"></i>
+    </nav>
+
+  </div>
+
+  <script>
+    $(document).ready(function () {
+      $('#hamburger').click(function () {
+        $('.navbar nav ul').slideToggle();
+      });
+      $('.navbar nav ul #cancel').click(function () {
+        $('.navbar nav ul').slideUp();
+      });
+    });
+  </script>
+</body>
+
+</html>

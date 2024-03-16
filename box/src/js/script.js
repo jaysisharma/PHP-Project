@@ -19,13 +19,10 @@ gsap.registerPlugin(ScrollTrigger);
 //   });
   
 
-gsap.to(".about",{
-    scrollTrigger:{
-        trigger: "#hero ",
-        pin:".txt",
-        start:"top top",
-        end: "bottom 200px "
-        // scrub:1
-    },
 
+gsap.to('.arrow', {
+    y:-10,
+    yoyo:true,
+    repeat:-1,
+    
 })

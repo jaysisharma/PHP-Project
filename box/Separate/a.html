@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rich Text Editor</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #338cf4;
+        }
+
+        .container {
+            background-color: #ffffff;
+            width: 90vmin;
+            padding: 50px 30px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+            border-radius: 10px;
+            box-shadow: 0 25px 50px rgba(7, 20, 35, 0.2);
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 15px;
+        }
+
+        button {
+            height: 28px;
+            width: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 3px;
+            border: none;
+            background-color: #ffffff;
+            outline: none;
+            color: #020929;
+        }
+
+        select {
+            padding: 7px;
+            border: 1px solid #020929;
+            border-radius: 3px;
+        }
+
+        .options label,
+        .options select {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            background-color: transparent;
+            width: 40px;
+            height: 28px;
+            border: none;
+            cursor: pointer;
+        }
+
+        input[type="color"]::-webkit-color-swatch {
+            border-radius: 15px;
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+        }
+
+        input[type="color"]::-moz-color-swatch {
+            border-radius: 15px;
+            box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+        }
+
+        #text-input {
+            margin-top: 10px;
+            border: 1px solid #dddddd;
+            padding: 20px;
+            height: 50vh;
+        }
+
+        .active {
+            background-color: #e0e9ff;
+        }
+    </style>
+</head>
+<body>
+    <textarea>
+        Welcome to TinyMCE!
+      </textarea>
+    <script src="https://cdn.tiny.cloud/1/ooyhxxlexxjqmgtr3pu4dmcycq81w785kpj5alo3f29e48dn/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+<!-- Place the following <script> and <textarea> tags your HTML's <body> -->
+<script>
+  tinymce.init({
+    selector: 'textarea',
+    plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
+    toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+  <!-- <div class="navbar flex bg-red-500 h-16 justify-between  items-center px-8">
+        <div class="logo">Logo</div>
+        <nav>
+          <ul class="flex md:gap-4 gap-20 md:flex-row flex-col absolute  left-0 top-0 w-screen text-center text-3xl px-10 bg-black text-white h-screen">
+            <i class="fa-solid fa-xmark md:hidden " id="cancel"></i>
+            <li>Home</li>
+            <li>About</li>
+            <li>Services</li>
+            <li>Contact</li>
+          </ul>
+          <input type="text" name="" id="" class="mr-2 rounded-md px-4 w-40" placeholder="Search......">
+          <i class="fa-solid fa-bars md:hidden block  float-right mt-1" id="hamburger"></i>
+        </nav>
+    
+      </div> -->
+    

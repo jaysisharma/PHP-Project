@@ -8,8 +8,14 @@ module.exports = {
         'square': 'square',
         'disc': 'disc',
       },
+      colors: {
+        'custom-dark': '#111827',        
+      },
+
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
 

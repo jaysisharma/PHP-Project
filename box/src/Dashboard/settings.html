@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideNav</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <style>
+        .category {
+            height: 50px;
+            /* background-color: red; */
+            transition: height .5s;
+            overflow: hidden;
+        }
+
+        .category:hover {
+            height: 130px;
+        }
+
+        .chart {
+            /* height: 400px; */
+            padding: 18px;
+            width: 50%;
+        }
+
+        @media (max-width:768px) {
+            .left {
+                z-index: 999;
+            }
+
+            .rightss {
+                background-color: rgb(172, 172, 172);
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-y-hidden" style="background-color: #f2f3f8;">
+    <header class="header h-16 w-screen bg-gray-800 flex justify-between items-center text-white md:pl-20 pl-4"
+        style="height: 6vh">
+        <div class="logo text-2xl font-bold">Blogssy</div>
+        <div class="search md:ml-32 flex items-center ">
+            <div class="ham  p-1 px-3 bg-gray-700 cursor-pointer mr-2">
+                <i class="fa-solid fa-bars" style="height: 20px;"></i>
+
+            </div>
+            <form action="" class="md:block hidden mr-20">
+                <input type="text" class="p-1 bg-gray-800 text-white placeholder-gray-400 rounded-md px-4 "
+                    placeholder="Search..." style="border: 1px solid #265196;">
+                <input type="submit" value="Search" class="bg-blue-500 p-1 px-2 rounded-sm cursor-pointer  ">
+            </form>
+        </div>
+    </header>
+    <div class="admin-body flex  overflow-y-hidden" style="height: 95vh; ">
+        <div class="left md:w-80    bg-white w-14 md:overflow-auto overflow-hidden ">
+            <div class="profile h-56 flex flex-col justify-center items-center "
+                style="border-bottom: 1px solid rgb(181, 181, 181);">
+                <div class="p_img"
+                    style="background: url('https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg'); height: 60px; width: 60px; background-position: center; background-size: cover; border-radius: 100%;">
+                </div>
+                <h2 class="text-base mt-5">Mike Smith</h2>
+                <p class="text-xs text-gray-500">ADMINISTRATOR</p>
+            </div>
+            <div class="items ">
+                <p class="mt-8 my-2 mx-4 text-lg">
+                    Configure
+                </p>
+                <div class="item p-3  bg-gray-100 flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-tv"></i>
+                    <p class="cursor-pointer"><a href="./nav3.html">Dashboard</a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-border-all"></i>
+                    <p class="cursor-pointer"><a href="./all.html">All Blog</a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-plus"></i>
+                    <p class="cursor-pointer"><a href="./add.html">Add Blog</a></p>
+                </div>
+                <!-- <div class="item category p-3 w-full bg-red-300 flex px-5 items-center justify-between gap-4">
+                    <div class="icon ">
+                        <div class="mains flex items-center gap-4">
+                            <i class="fa-solid fa-list"></i>
+                            <p>Category</p>
+                        </div>
+
+                    </div>
+                    <span class="float-right"><i class="fa-solid fa-chevron-right "></i></span>
+                </div> -->
+                <!-- <div class="item category p-3   px-5  ">
+                    <div class="icons flex justify-between w-full ">
+                        <div class="m flex gap-4 items-center ">
+                            <i class="fa-solid fa-list "></i>
+                            <p class="cursor-pointer">Category</p>
+                        </div>
+                        <span class="float-right"><i class="fa-solid fa-chevron-right "></i></span>
+
+
+                    </div>
+                    <div class="p mt-4 px-8 flex flex-col gap-4">
+                        <ul style="list-style: disc;">
+                            <li class="text-xl cursor-pointer">Health</li>
+                            <li class="text-xl cursor-pointer">Fashion</li>
+                        </ul>
+                    </div>
+
+                </div> -->
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="cursor-pointer"> <a href="./users.html">Users</a></p>
+                </div>
+                
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="cursor-pointer"> <a href="./settings.html">Settings   </a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <p class="cursor-pointer"> <a href="../Auth/signup.html">Log out</a></p>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="right ml-3 flex flex-col  gap-9 shadow-sm p-6  w-full" style="overflow-y: scroll;">
+
+            <h1 class="text-3xl text-gray-600">Settings</h1>
+
+
+            <div class="inner_content px-10 mt-10 flex flex-col  gap-8">
+                <div class="box1 flex md:flex-row flex-col justify-center md:justify-start ">
+                    <div class="p_left  w-80 px-2 mb-4">
+                        <h2 class="text-3xl font-bold ">Profile</h2>
+                        <p>Wirte your personal information.</p>
+                    </div>
+                    <div class="p_right grid md:grid-cols-2 grid-cols-1 gap-4 py-10 px-7 bg-white shadow-md w-full rounded-md">
+                        <div>
+                            <label for="username"
+                                class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="username" id="username" autocomplete="username"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        placeholder="janesmith">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="email" id="email" autocomplete="email"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        placeholder="janesmith@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="country"
+                                class="block text-sm font-medium leading-6 text-gray-900">Country</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="country" id="country" autocomplete="country"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="state" class="block text-sm font-medium leading-6 text-gray-900">State</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="state" id="state" autocomplete="state"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-span-full">
+                            <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
+                            <div class="mt-2 flex items-center gap-x-3">
+                                <svg class="h-12 w-12 text-gray-300" viewBox="0 0 24 24" fill="currentColor"
+                                    aria-hidden="true">
+                                    <path fill-rule="evenodd"
+                                        d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                                <button type="button"
+                                    class="rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">Change</button>
+                            </div>
+                        </div>
+                        <div class="col-span-full btns flex justify-center w-full">
+                            <button class="btn bg-blue-500 p-2 rounded-md text-white">Update</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="box2 flex md:flex-row flex-col justify-center md:justify-start">
+                    <div class="p_left  w-80 px-2 mb-4">
+                        <h2 class="text-3xl font-bold ">Change Password</h2>
+                        <p>Secure yourself.</p>
+                    </div>
+                    <div class="p_right grid md:grid-cols-2 grid-cols-1 gap-4 py-10 px-7 bg-white shadow-md w-full rounded-md">
+                        <div>
+                            <label for="username" class="block text-sm font-medium leading-6 text-gray-900">Current
+                                Password</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="password" name="username" id="username" autocomplete="username"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        placeholder="Current password">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium leading-6 text-gray-900">New Password</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="email" id="email" autocomplete="email"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                        placeholder="janesmith@gmail.com">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label for="country"
+                                class="block text-sm font-medium leading-6 text-gray-900">Confirm Password</label>
+                            <div class="mt-2">
+                                <div
+                                    class="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600">
+                                    <input type="text" name="country" id="country" autocomplete="country"
+                                        class="block flex-1 border-0 bg-transparent py-1.5 pl-3 text-gray-900 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6">
+                                </div>
+                            </div>
+                        </div>
+                       
+                       
+                        <div class="col-span-full btns flex justify-center w-full">
+                            <button class="btn bg-blue-500 p-2 rounded-md text-white">Update</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+</body>
+
+</html>

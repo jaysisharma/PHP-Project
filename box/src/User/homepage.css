@@ -1,0 +1,127 @@
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#masthead {
+    /* position: fixed; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    /* z-index: 9999; */
+}
+
+#masthead a {
+    padding: 1rem 2rem;
+}
+
+
+#panels #panels-container {
+    height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    padding: 0;
+    overflow: hidden;
+}
+
+#panels #panels-container .panel {
+    color: var(--color-just-black);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #f00;
+}
+
+#panels #panels-container .panel img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#panels #panels-container .panel .panels-navigation {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+#panels #panels-container .panel .anchor-panel,
+#panels #panels-container .panel .nav-panel {
+    text-transform: uppercase;
+    margin-right: 2rem;
+}
+
+#panels #panels-container .panels-navigation {
+    position: absolute;
+    width: 100%;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rebeccapurple;
+}
+
+.topics h2 {
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+}
+
+.topics h2:hover {
+    color: #fff;
+    -webkit-text-stroke: none;
+}
+
+.boxx {
+    width: 100%;
+    height: 200vh;
+    background-color: black;
+}
+
+.center-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1;
+    /* Ensure content is above particles */
+}

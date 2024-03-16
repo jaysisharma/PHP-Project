@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SideNav</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <style>
+        .category {
+            height: 50px;
+            /* background-color: red; */
+            transition: height .5s;
+            overflow: hidden;
+        }
+
+        .category:hover {
+            height: 130px;
+        }
+
+        .chart {
+            /* height: 400px; */
+            padding: 18px;
+            width: 50%;
+        }
+
+        @media (max-width:768px) {
+            .left {
+                z-index: 999;
+            }
+
+            .rightss {
+                background-color: rgb(172, 172, 172);
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-y-hidden" style="background-color: #f2f3f8;">
+    <header class="header h-16 w-screen bg-gray-800 flex justify-between items-center text-white md:pl-20 pl-4"
+        style="height: 6vh">
+        <div class="logo text-2xl font-bold">Blogssy</div>
+        <div class="search md:ml-32 flex items-center ">
+            <div class="ham  p-1 px-3 bg-gray-700 cursor-pointer mr-2">
+                <i class="fa-solid fa-bars" style="height: 20px;"></i>
+
+            </div>
+            <form action="" class="md:block hidden mr-20">
+                <input type="text" class="p-1 bg-gray-800 text-white placeholder-gray-400 rounded-md px-4 "
+                    placeholder="Search..." style="border: 1px solid #265196;">
+                <input type="submit" value="Search" class="bg-blue-500 p-1 px-2 rounded-sm cursor-pointer  ">
+            </form>
+        </div>
+    </header>
+    <div class="admin-body flex  overflow-y-hidden" style="height: 95vh; ">
+        <div class="left md:w-80    bg-white w-14 md:overflow-auto overflow-hidden ">
+            <div class="profile h-56 flex flex-col justify-center items-center "
+                style="border-bottom: 1px solid rgb(181, 181, 181);">
+                <div class="p_img"
+                    style="background: url('https://www.shutterstock.com/image-photo/head-shot-portrait-close-smiling-600nw-1714666150.jpg'); height: 60px; width: 60px; background-position: center; background-size: cover; border-radius: 100%;">
+                </div>
+                <h2 class="text-base mt-5">Mike Smith</h2>
+                <p class="text-xs text-gray-500">ADMINISTRATOR</p>
+            </div>
+            <div class="items ">
+                <p class="mt-8 my-2 mx-4 text-lg">
+                    Configure
+                </p>
+                <div class="item p-3  bg-gray-100 flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-tv"></i>
+                    <p class="cursor-pointer"><a href="./nav3.html">Dashboard</a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-border-all"></i>
+                    <p class="cursor-pointer"><a href="./all.html">All Blog</a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-plus"></i>
+                    <p class="cursor-pointer"><a href="./add.html">Add Blog</a></p>
+                </div>
+                <!-- <div class="item category p-3 w-full bg-red-300 flex px-5 items-center justify-between gap-4">
+                    <div class="icon ">
+                        <div class="mains flex items-center gap-4">
+                            <i class="fa-solid fa-list"></i>
+                            <p>Category</p>
+                        </div>
+
+                    </div>
+                    <span class="float-right"><i class="fa-solid fa-chevron-right "></i></span>
+                </div> -->
+                <!-- <div class="item category p-3   px-5  ">
+                    <div class="icons flex justify-between w-full ">
+                        <div class="m flex gap-4 items-center ">
+                            <i class="fa-solid fa-list "></i>
+                            <p class="cursor-pointer">Category</p>
+                        </div>
+                        <span class="float-right"><i class="fa-solid fa-chevron-right "></i></span>
+
+
+                    </div>
+                    <div class="p mt-4 px-8 flex flex-col gap-4">
+                        <ul style="list-style: disc;">
+                            <li class="text-xl cursor-pointer">Health</li>
+                            <li class="text-xl cursor-pointer">Fashion</li>
+                        </ul>
+                    </div>
+
+                </div> -->
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-user"></i>
+                    <p class="cursor-pointer"> <a href="./users.html">Users</a></p>
+                </div>
+                
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-gear"></i>
+                    <p class="cursor-pointer"> <a href="./settings.html">Settings   </a></p>
+                </div>
+                <div class="item p-3  flex px-5 items-center gap-4 ">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <p class="cursor-pointer"> <a href="../Auth/signup.html">Log out</a></p>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="right ml-3 flex flex-col  gap-9 shadow-sm p-6  w-full" style="overflow-y: scroll;">
+
+            <h1 class="text-3xl text-gray-600">Dashboard</h1>
+
+            <div class="cards flex md:flex-row flex-col items-center gap-8">
+
+                <div class="card1 flex flex-col justify-center h-44 w-96 bg-white shadow-lg">
+                    <div class="item11  flex justify-between items-center w-full px-6 pb-4">
+                        <div class="icon text-gray-400">
+                            <i class="fa-solid fa-user-group text-4xl"></i>
+                        </div>
+                        <div class="card_right">
+                            <h1 class="float-right mb-2">Total Views</h1>
+                            <p class="text-4xl">2,389,021</p>
+                        </div>
+
+                    </div>
+                    <div class="overall    px-6 pt-4     flex justify-between items-center"
+                        style="border-top: 1px solid rgb(201, 201, 201);">
+                        <p>Since last month</p>
+                        <p class=" text-green-500"><i class="fa-solid fa-caret-up "></i> 3.65%</p>
+                    </div>
+                </div>
+                <div class="card1 flex flex-col justify-center h-44 w-96 bg-white shadow-lg">
+                    <div class="item11  flex justify-between items-center w-full px-6 pb-4">
+                        <div class="icon text-gray-400">
+                            <i class="fa-solid fa-user-group text-4xl"></i>
+                        </div>
+                        <div class="card_right">
+                            <h1 class="float-right mb-2">Last Month Views</h1>
+                            <p class="text-4xl">389,021</p>
+                        </div>
+
+                    </div>
+                    <div class="overall    px-6 pt-4     flex justify-between items-center"
+                        style="border-top: 1px solid rgb(201, 201, 201);">
+                        <p>Since last month</p>
+                        <p class=" text-green-500"><i class="fa-solid fa-caret-up "></i> 3.65%</p>
+                    </div>
+                </div>
+                <div class="card1 flex flex-col justify-center h-44 w-96 bg-white shadow-lg">
+                    <div class="item11  flex justify-between items-center w-full px-6 pb-4">
+                        <div class="icon text-gray-400">
+                            <i class="fa-solid fa-user-group text-4xl"></i>
+                        </div>
+                        <div class="card_right">
+                            <h1 class="float-right mb-2">Total Users</h1>
+                            <p class="text-4xl">2,321</p>
+                        </div>
+
+                    </div>
+                    <div class="overall    px-6 pt-4     flex justify-between items-center"
+                        style="border-top: 1px solid rgb(201, 201, 201);">
+                        <p>Since last month</p>
+                        <p class=" text-green-500"><i class="fa-solid fa-caret-up "></i> 3.65%</p>
+                    </div>
+                </div>
+                <div class="card1 flex flex-col justify-center h-44 w-96 bg-white shadow-lg">
+                    <div class="item11  flex justify-between items-center w-full px-6 pb-4">
+                        <div class="icon text-gray-400">
+                            <i class="fa-solid fa-user-group text-4xl"></i>
+                        </div>
+                        <div class="card_right">
+                            <h1 class="float-right mb-2">New User This Month</h1> <br>
+                            <p class="text-4xl float-right">521</p>
+                        </div>
+
+                    </div>
+                    <div class="overall    px-6 pt-4     flex justify-between items-center"
+                        style="border-top: 1px solid rgb(201, 201, 201);">
+                        <p>Since last month</p>
+                        <p class=" text-green-500"><i class="fa-solid fa-caret-up "></i> 3.65%</p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="charts flex justify-between">
+                <div class="chart bg-white shadow-md">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+                <canvas id="myChart2" class="mr-8 bg-white p-8" style="width:100%;max-width:740px; height:240px"></canvas>
+
+            </div>
+            <div class="topv flex ">
+                <div class="char_left h-96 px-20 bg-white py-2">
+                    <h2 class="text-3xl font-bold mb-2">Views Based on Country</h2>
+                    <canvas id="myChart34"  ></canvas>
+                </div>
+                <div class="heads ml-20 bg-white p-4 rounded-md shadow-lg">
+                    <h2 class="text-3xl font-bold">Top Blogs</h2>
+                    <div class="sample_cards pb-80 mt-10 px-4 flex flex-col gap-3">
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>1.</p>
+                                <p>Trending Fashion Products</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Fashion</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">923800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>2.</p>
+                                <p>ChatGpt Hacks 2024</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Technology</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">323800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>3.</p>
+                                <p>Donald Trumph declared World War</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Politics</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">23800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>3.</p>
+                                <p>Donald Trumph declared World War</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Politics</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">23800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>3.</p>
+                                <p>Donald Trumph declared World War</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Politics</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">23800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+                        <div class="cards1 flex justify-between" style="width: 85vh;">
+                            <div class="title flex items-center text-3xl gap-4 " >
+                                <p>3.</p>
+                                <p>Donald Trumph declared World War</p>
+                                <p class="text-sm p-2 bg-red-200 rounded-md">Politics</p>
+                            </div>
+                            <div class="views">
+                                <p class="float-right mr-2">Views</p>
+                                <p class="text-2xl text-blue-500">23800 <i class="fa-solid fa-arrow-up"></i></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+
+
+
+        </div>
+    </div>
+
+    <!-- <script>
+        // $(document).ready(function () {
+        //     $(".ham").click(function () {
+        //         $(".left").toggle();
+        //        $('.rightss').toggle(); 
+        //     });
+        // });
+    </script> -->
+
+    <script>
+        var ctx = document.getElementById('myChart').getContext('2d');
+
+        var myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'],
+                datasets: [{
+                    label: 'Monthly Visits',
+                    data: [50, 60, 45, 70, 80, 50, 90, 70],
+                    borderColor: 'blue',
+                    borderWidth: 2,
+                    fill: false
+                }]
+            }
+        });
+
+        var xValues = ["India", "Nepal", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = ["red", "green", "blue", "orange", "brown"];
+
+        new Chart("myChart2", {
+            type: "bar",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: "World Wine Production 2018"
+                }
+            }
+        });
+        var xValues = ["India", "Nepal", "Spain", "USA", "Argentina"];
+        var yValues = [55, 49, 44, 24, 15];
+        var barColors = [
+            "#b91d47",
+            "#00aba9",
+            "#2b5797",
+            "#e8c3b9",
+            "#1e7145"
+        ];
+
+        new Chart("myChart34", {
+            type: "doughnut",
+            data: {
+                labels: xValues,
+                datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: "World Wide Wine Production 2018"
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
